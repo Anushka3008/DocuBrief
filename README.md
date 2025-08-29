@@ -10,6 +10,11 @@ DocuBrief is a web application that allows users to upload PDFs or image documen
 
 ---
 
+## 🚀 Live Demo
+
+You can try the app here: [DocuBrief](https://docu-brief.vercel.app/)
+
+---
 ## ✨ Features
 
 - **Document Upload**: Easily upload PDF or image files (JPG, PNG) via drag-and-drop or file picker.
