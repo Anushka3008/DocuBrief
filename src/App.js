@@ -6,7 +6,6 @@ import SummaryDisplay from './components/SummaryDisplay';
 import './App.css';
 import './loader.css';
 
-
 const App = () => {
   const [file, setFile] = useState(null);
   const [summaryLength, setSummaryLength] = useState('medium');
@@ -41,20 +40,32 @@ const App = () => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-8 bg-gradient-to-br from-indigo-100 to-purple-100">
       <div className="w-full max-w-2xl p-10 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 rounded-3xl shadow-2xl border border-gray-100">
+        
+        {/* Header */}
         <header className="text-center mb-10">
-          <p className="text-lg sm:text-xl font-semibold mb-2 text-gray-500 font-serif">Hi! welcome to</p>
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-pink-400 tracking-tight mb-4">DocuBrief</h1>
-          <p className="text-lg text-gray-600 font-medium">Get smart summaries in an instant.</p>
+          <p className="text-xl sm:text-2xl font-semibold mb-2 text-gray-500 font-serif">
+            Hi! Welcome to
+          </p>
+          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-pink-400 tracking-tight mb-4">
+            DocuBrief
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-600 font-medium">
+            Get smart summaries in an instant.
+          </p>
         </header>
         
+        {/* File Uploader */}
         <FileUploader onFileChange={setFile} fileName={fileName} />
 
+        {/* Controls */}
         <div className="mt-8 flex flex-col md:flex-row items-center justify-between space-y-6 md:space-y-0 md:space-x-6">
           <div className="flex items-center space-x-3 w-full md:w-auto">
-            <label htmlFor="summary-length" className="text-gray-700 font-semibold">Summary Length:</label>
+            <label htmlFor="summary-length" className="text-gray-700 font-semibold">
+              Summary Length:
+            </label>
             <select
               id="summary-length"
-              className="form-select block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+              className="form-select block w-auto min-w-[120px] rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
               value={summaryLength}
               onChange={(e) => setSummaryLength(e.target.value)}
             >
@@ -63,14 +74,17 @@ const App = () => {
               <option value="long">Long</option>
             </select>
           </div>
+
+          {/* Loader */}
           {loading && (
             <div className="flex items-center space-x-2">
-              <div className="loader border-4 border-gray-200 border-t-4 border-t-indigo-500 rounded-full w-8 h-8 animate-spin"></div>
+              <div className="loader"></div>
               <span className="text-sm text-gray-500 font-medium">Generating summary...</span>
             </div>
           )}
         </div>
         
+        {/* Summary Display */}
         <SummaryDisplay summary={summary} error={error} />
       </div>
     </div>
