@@ -46,7 +46,7 @@ const App = () => {
           <p className="text-xl sm:text-2xl font-semibold mb-2 text-gray-500 font-serif">
             Hi! Welcome to
           </p>
-          <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-pink-400 tracking-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-pink-400 tracking-tight mb-4">
             DocuBrief
           </h1>
           <p className="text-lg sm:text-xl text-gray-600 font-medium">
